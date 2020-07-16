@@ -8,7 +8,7 @@
         #wrapper {
             background-image: url("https://res.cloudinary.com/dsu7d8dwj/image/upload/v1594213628/banner-min_djvokw.jpg");
             padding: 2em;
-            height: 100vh;
+            height: 140vh;
             background-repeat: no-repeat;
             background-size: cover;
             color: #ffffff;
@@ -38,7 +38,39 @@
 
             </script>
         </div>
+        <div id="slider">
+            <img src="" id="slide-img" width="460" height="360">
+        </div>
     </div>
 </body>
+
+<script>
+    "use strict";
+    var $ = function(id) {
+        return document.getElementById(id);
+    };
+
+    window.onload = function() {
+        var slideImg = $("slide-img");
+
+         var images = [];
+            for (var i = 0; i < 5; i++) {
+                images[i] = "megha3699-images/image" + (i+1) + ".jpg";
+            }
+
+            var x = 0;
+            function slideshow() {
+                if (x < images.length - 1) {
+                    x = x+1;
+                } else {
+                    x = 0;
+                }
+                   slideImg.src = images[x];
+            }
+             setInterval(slideshow, 1000);
+
+    };
+
+</script>
 
 </html>
