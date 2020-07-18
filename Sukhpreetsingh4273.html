@@ -13,12 +13,35 @@
                 color: brown;
                 font-family: cursive;
             }
+            div{
+                text-align: center;
+                
+            }
         </style>
+        <script>
+        window.onload = function() {
+            var images = [];
+            for (var i = 0; i < 5; i++) {
+                images[i] = "images_sukhpreet/image" + (i + 1) + ".jpg";
+            }
+            var i;
+            function slide() {
+                if (i < images.length - 1) {
+                    i = i+1;
+                } else {
+                    i = 0;
+                }
+                    document.getElementById("images").src = images[i];
+            }
+             setInterval(slide, 1000);
+        }
+    </script>
     </head>
     <body>
         <h1>Sukhpreet Singh</h1>
         <script>
         document.write("Hi there,","<br/>","My name is Sukhpreet Singh and I am from a small town in Punjab,India known as Chandon Gobindgarh.About my previous education I have completed my Bachelor of Computer Application from Punjab University in 2019. As i have recently completed my studies i don't have any work experience.About my hobbies, I like to go for a walk or running in the morning, like to play mobile games, also i do write some poetry(but in Punjabi :) ), like to read books. I am interested in coding and i want to enhance my knowledge in it. ")
         </script>
+        <div><img src="" id="images" height="300" ></div>
     </body>
 </html>
