@@ -21,6 +21,11 @@
                 text-align: center;
                 text-decoration-line: underline;
             }
+            #slideshow{
+                height:500px;
+                margin-left: 14%;
+                padding-top: 2em;
+            }
        </style>
     </head>
     
@@ -33,7 +38,23 @@
             <main>
                 <script>
                     document.writeln("Hello Professor Lubna, I'm <strong>Pramod Kumar Dugyala</strong> and I'm from Karimnagar, Telangana, India. Hope you're doing great and are safe in this pandemic situation.<br>I have completed my Bachelors under Computer Science Engineering department in May 2018, from Jawaharlal Nehru Technological University-Hyderabad(JNTU-H).<br> I worked for a bank, when I parallelly pursued my dream to study in Canada, also I helped my brothers in their business for a few days. And now I chose Web designing and Development course because of the interest that internet and coding/programming created in me.<br>My hobbies are playing Cricket, listening Music, exploring new gadgets, playing with kids...<br><br>Stay Safe.");
+                    window.onload=function(){
+                        var images=[];
+                        for(var i=1; i<=5; i++){
+                            images[i]="PramodKumarDugyala_HWWeek3/imageP"+i+".jpg";
+                        }
+                        var n=0;
+                        function slideShow(){
+                            if(n<images.length-1)
+                                n=n+1;
+                            else
+                                n=1;
+                            document.getElementById("slideshow").src = images[n];
+                        }
+                         setInterval(slideShow, 1000);
+                    }
                 </script>
+                <div><img src="" id="slideshow"></div>
             </main>
             <footer></footer>
         </div>
