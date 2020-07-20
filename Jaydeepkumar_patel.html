@@ -1,4 +1,25 @@
 <html>
+    <head>
+    <style>
+        #slider{
+            text-align: center;
+            margin-top: 40px;
+        }    
+    </style>
+    <script>
+        var n = 1;
+        var slide=function(){
+                document.getElementById("img").src="Jaydeepkumar_Images/img"+n+".jpg";
+                n++;
+                if(n>5){
+                    n = 1;
+                }
+            }
+            window.onload=function(){
+                var time=setInterval(slide, 1000);
+            }
+    </script>
+    </head>
     <body>
         <center><h1>Introduction</h1></center>
     Hello everyone,
@@ -8,5 +29,9 @@
 <p>Besides this, I am also a digital marketer by passion and also did one and a half months of training in it and read a lot in it. Talking about my hobbies, I love to learn and explore new things, also I love to travel a lot. I am also. a huge movie buff, and have watched almost half of the Hollywood (exaggerating :P) , but I like drama and thriller movies more. </p>
 
 Thank you.
+        
+    <div id="slider">
+    <img id="img" width="600" height="400" src="Jaydeepkumar_Images/img1.jpg">    
+    </div>
     </body>
 </html>
