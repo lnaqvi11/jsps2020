@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Tarandeep Singh</title>
-    <style>
-      #wrapper {
+    <head>
+        <style>
+                  #wrapper {
         border:5px solid #191970;
         letter-spacing:2px;
         text-align: center;
@@ -23,15 +22,41 @@
           text-decoration: underline;
           
       }
-    </style>
+            img{
+                margin: 1em;
+            }
+        </style>
+        <script>
+            var $= function(id){
+            return(document.getElementById(id))};
+            var timer;
+            var i=1;
+            var startUpgrade= function(){
+                document.images[0].src="a"+i+".jpg";
+                i=i+1;
+                if(i>=6)
+                    i=1;
+                 timer=setTimeout( startUpgrade,1000);
+            };
+            
+            window.onload= function(){
+                timer=setTimeout( startUpgrade,1000);
+            };
+        
+        </script>
     
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>Tarandeep Singh</h1>
+    </head>
+    <body>
+        <div id="wrapper">
+        <h1>Tarandeep Singh</h1>
     <script>
       document.write ("I am Tarandeep Singh from Chandigarh,India. I have completed my Bachelors in Computer Engineering. My hobbies are to read books, listen to music and playing outdoor sports. I also like to travel and watch movies. ");
+        // Source of Images = https://www.pexels.com/search/soccer/
     </script>
+            <hr>
+             <div> 
+            <img src="a1.jpg" width="500px" height="400px" alt="sorry no image">
+            </div>
     </div>
-  </body>
+</body>
 </html>
