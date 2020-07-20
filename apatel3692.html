@@ -2,27 +2,76 @@
 <html>
   <head>
     <title>Amisha Patel</title>
-    <style>
+      <style>
       #wrapper {
         border: solid 0.5em darkgray;
         width: 80%;
         padding: 2em;
         margin: 1em auto;
-        background-color: lightgray
+        background-color: lightgray;
       }
-        h1{
-            text-align: center;
-            color: black;}
+     h1{
+        text-align: center;
+        color: black;}  
         
+    div{text-align: center;}
+        
+    img{
+        padding-left:1%;
+        height: 350px;
+        width: 500px;
+        }
     </style>
+    
   </head>
   <body>
     <div id="wrapper">
       <h1>Amisha Patel</h1>
         <script>
             document.write('Hello, My name is Amisha Patel. I am from Mahemdabad, Gujrat, India. I have completed BE in Computer Science and Engineering before few years. In terms of hobbies, I like to read and explore archiological stuff. So, In free hours, I like to do that. Other than  that, I like to play badminton.')
-        </script>
-     
-    </div>
+        </script>     
+        <br><br>
+        <div class="slideshow">
+
+            <div class="Slide"><img src="images/img1.jpg" alt="Udaipur_palace" ></div>
+            <div class="Slide"><img src="images/img2.jpg" alt="jordan_cave" ></div>
+            <div class="Slide"><img src="images/img3.jpg" alt="Rajsthan_stepwell" ></div>
+            <div class="Slide"><img src="images/img4.jpg" alt="Raniki_stepwell" ></div>
+            <div class="Slide"><img src="images/img5.jpg" alt="oman_palace" ></div>
+        </div>
+
+        <div>
+            <span class="im" onclick="SlidenNumber(1)"></span> 
+            <span class="im" onclick="SlidenNumber(2)"></span> 
+            <span class="im" onclick="SlidenNumber(3)"></span>
+            <span class="im" onclick="SlidenNumber(4)"></span>
+            <span class="im" onclick="SlidenNumber(5)"></span>
+        </div>
+        </div>
+      <script>
+         var slideShow = 0;
+         show_Slides();
+
+        function show_Slides() {
+            var i;
+            var images = document.getElementsByClassName("Slide");
+            var x = document.getElementsByClassName("im");
+            for (i = 0; i < images.length; i++) {
+                images[i].style.display = "none";  
+            }
+            slideShow++;
+            if (slideShow > images.length) {slideShow = 1}    
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            images[slideShow-1].style.display = "block";  
+            x[slideShow-1].className += " active";
+            setTimeout(show_Slides, 1000);
+        }
+
+      </script>
+      
+      
+      
   </body>
 </html>
