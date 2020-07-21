@@ -9,14 +9,37 @@
         padding: 2em;
         margin: 1em auto;
       }
+            img{
+                margin:20px;
+            }
     </style>
     </head>
     <body>
         <div id="wrapper">
             <h1> Navpreet Kaur</h1>
             <script>
-            document.write("Hello Everyone, My name is Navpreet Kaur. I am from Punjab, India. I worked as a Primary Computer Teacher during 2014-15. After that, I completed my Bachelors of Vocation in Software Development. After completion of my bachelors I was eemployed as an Assitant Operations Manager in Yashtaj Infra Leasing pvt.ltd.  Now I am pursuing 'Web Design and development' because of my great interest in this field. I want to make my proffesional career in this Sector. Besides, I have great interest in reading books such as Ppunjabi novels. ")
+            document.write("Hello Everyone, My name is Navpreet Kaur. I am from Punjab, India. I worked as a Primary Computer Teacher during 2014-15. After that, I completed my Bachelors of Vocation in Software Development. After completion of my bachelors I was eemployed as an Assitant Operations Manager in Yashtaj Infra Leasing pvt.ltd.  Now I am pursuing 'Web Design and development' because of my great interest in this field. I want to make my proffesional career in this Sector. Besides, I have great interest in reading books such as Ppunjabi novels. ");
+                 var i = 0;
+                var img = [];
+                var time = 1000;
+                for (var i = 0; i < 5; i++) {
+                    img[i] = "nkaur_Images/img" + (i + 1) + ".jpg";
+                }
+
+                function slideshow() {
+                    document.image.src = img[i];
+
+                    if (i < img.length - 1) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+
+                    setTimeout("slideshow()", time);
+                }
+                window.onload = slideshow;
             </script>
+             <img name="image" width="700" height="600">
         </div>
     </body>
     
