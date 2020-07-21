@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
         <title>JavaScript Homework</title>
         <style>
             body{
@@ -12,7 +14,7 @@
                 width: auto;
             }
             #wrapper{
-                width: 70%;
+                width: 80%;
                 margin-left: auto;
                 margin-right: auto;
                 background-color: #F5F5F5;
@@ -26,7 +28,34 @@
             strong {
                 text-decoration-line: underline;
             }
+            #imageslide{
+                height: auto;
+                widows: auto;
+            }
        </style>
+        
+        <script>
+            var images=[];
+            
+            images[0]= "mahesh_chhayani/p1.jpg";
+            images[1]= "mahesh_chhayani/p2.jpg";
+            images[2]= "mahesh_chhayani/p3.jpg";
+            images[3]= "mahesh_chhayani/p4.jpg";
+            images[4]= "mahesh_chhayani/p5.jpg";
+            
+            var i;
+            function imgslide(){
+                if(i<images.length-1){
+                    i=i+1;
+                }
+                else{
+                    i=0;
+                }
+                document.getElementById("imgg").src = images[i];
+            }
+            setInterval(imgslide,1000);
+            
+        </script>
     </head>
     
     <body>
@@ -36,6 +65,7 @@
             </header>
             <nav></nav>
             <main>
+                <div>
                 <script>
                     document.write("<strong>Hometown</strong> : Rajkot,Gujrat,India.<br>");
                     document.write("<strong>Education</strong> : Computer Engineering.<br>");
@@ -43,6 +73,7 @@
                     document.writeln("<strong>Hobbies</strong> : Watch Movies,Tv shows,Computer games and Explore internet. <br><br><hr>");
                     document.writeln("I have completed my engineering in May 2019 from Gujrat Technologycal University(GTU). I haven't joind any company yet because I want to study more about website development so that I can get a good job in web development field.");
                 </script>
+                <div><img src="" id="imgg" height="650"></div>
             </main>
             <footer></footer>
         </div>
