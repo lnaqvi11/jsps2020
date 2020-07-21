@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mihir Jariwala</title>
+
+   
 </head>
 
 <style>
-
-*{
+    
+    *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -51,6 +53,28 @@
     padding-right: 20px;
 
 }
+#image-slider{
+    padding: 30px;
+}
+
+img{
+    height: 500px;
+    width: 700px;
+    object-fit: cover;
+}
+
+ul{
+    display: none;
+}
+
+.image{
+    opacity: 0;
+}
+
+.active{
+    opacity: 1;
+}
+
 </style>
 
 <body>
@@ -60,6 +84,21 @@
         <div class="box">
  
              <h1>Mihir Jariwala</h1>
+
+             <ul id="slider-images">
+                <li><img src="https://cdn.pixabay.com/photo/2018/02/22/17/27/programming-3173456_960_720.png" class="image active"></li>
+                <li><img src="https://cdn.pixabay.com/photo/2018/03/05/16/41/programming-3201149_960_720.png" class="image"></li>
+                <li><img src="https://cdn.pixabay.com/photo/2017/01/18/10/01/cloud-computing-1989339_960_720.png" class="image"></li>
+                <li><img src="https://cdn.pixabay.com/photo/2014/12/28/13/20/wordpress-581849_960_720.jpg" class="image"></li>
+                <li><img src="https://cdn.pixabay.com/photo/2015/01/31/12/00/seo-618434_960_720.jpg" class="image"></li>
+            </ul>
+
+
+             <div id="image-slider">
+
+                <img src="https://cdn.pixabay.com/photo/2018/02/22/17/27/programming-3173456_960_720.png" class="image active">
+             
+             </div>
  
              <script>
  
@@ -72,7 +111,33 @@
      </div>
      
    
+<script>
+    
+            function $(id){
 
+                return document.getElementById(id);
+            }
+
+            var images = $("slider-images").getElementsByTagName("img");
+          
+            var activeSlide = 0;
+
+            function nextSlide(){
+
+                images[activeSlide].className = "image"; 
+                activeSlide = (activeSlide+1)%images.length;
+                images[activeSlide].className = "image active";
+                $("image-slider").innerHTML = images[activeSlide].outerHTML;
+                              
+            }
+
+        window.onload = function(){
+         
+            var t = setInterval(nextSlide, 1000);
+          
+        }
+
+</script>
 </body>
 
 
