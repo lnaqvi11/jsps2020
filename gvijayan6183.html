@@ -4,12 +4,37 @@
     <title>Gopika Vijayan</title>
     <style>
       #wrapper {
-        border: solid 0.5em blue;
+        text-align: center;
         width: 80%;
         padding: 2em;
         margin: 1em auto;
       }
+        #image-slide{
+            padding-left: 10px;
+        }
+        h1{
+            text-align: center;
+        }
     </style>
+       <script>
+        window.onload = function() {
+            var images = [];
+            for (var i = 0; i < 3; i++) {
+                images[i] ="Gopika_images/image" + (i + 1) + ".jpg";
+            }
+
+            var i;
+            function slide() {
+                if (i < images.length - 1) {
+                    i = i+1;
+                } else {
+                    i = 0;
+                }
+                    document.getElementById("image-slide").src = images[i];
+            }
+             setInterval(slide, 2000);
+        }
+    </script>
   </head>
   <body>
     <div id="wrapper">
@@ -17,6 +42,8 @@
         <script>
             document.write('Hi, My name is Gopika Vijayan. I am from Kerala, India. I have completed my Masters in Computer Applications in 2019. Playing sports is my favourite pastime. My hobbies also include painting , gardening and cooking. ')
         </script>
+        <br><br><br>
+        <div class="image-div"><img src="" id="image-slide" width="500"></div>
     </div>
   </body>
 </html>
