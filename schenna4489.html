@@ -21,6 +21,13 @@
         h1 {
             text-align: center;
         }
+
+        #slide-img {
+            width: 800px;
+            height: 500px;
+            margin-left: 200px;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -32,8 +39,41 @@
         <main>
             <script>
                 document.writeln("<p>Hello everyone, I'm Shiva Krishna Chenna. I'm from Hyderabad, India.<br>I did my master degree in Computer Science from Jawaharlal Nehru Technological University, Jagitial  in 2017.<br>I'm a software developer with 2 years of experience.<br>My hobby includes watching and learning all kinds of sports to stay healthy.</p>");
+
+
             </script>
+             <div id="slider">
+                <img src="" id="slide-img">
+             </div>
         </main>
     </div>
 </body>
+<script>
+    "use strict";
+    var $ = function(id) {
+        return document.getElementById(id);
+    };
+
+    window.onload = function() {
+        var slideImg = $("slide-img");
+
+         var images = [];
+            for (var i = 0; i < 5; i++) {
+                images[i] = "shivaKrishnaChenna_Images/fruit" + (i+1) + ".jpg";
+            }
+
+            var x = 0;
+            function slideshow() {
+                if (x < images.length - 1) {
+                    x = x+1;
+                } else {
+                    x = 0;
+                }
+                   slideImg.src = images[x];
+            }
+             setInterval(slideshow, 1000);
+
+    };
+
+</script>
 </html>
