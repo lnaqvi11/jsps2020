@@ -1,15 +1,54 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Rashid</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        }
+        p{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #image-slider{
+            margin-left: 31rem;
+        }
+    </style>
+    <script>
+        var $ = function (id) {
+            return document.getElementById(id);
+        };
+        document.write("<p style='margin-top: 40px'>Hi All My name is Rashid. I'm from Andhra Pradesh state of India. I've completed my graduation in Computer Science and Engineering from JNTU-H in the year 2013. I have around 5 years of experince in IT industry as a BMC Remedy/ServiceNow developer. My hobbies are wathcing stand-up comdey and reading about new technologies in the market.<br><br><br> Week3 Homework</p>");
+            
+        window.onload = function(){
+            var imageSlider = $("image-slider");
+            var imgs = [];
+            for(var i=0; i<5; i++){
+                imgs[i] = "Rashid1267images/image"+(i+1)+".jpg";
+            }
+            var imageCounter = 0;
+            function imageSlide(){
+                if(imageCounter < imgs.length - 1){
+                    imageCounter = imageCounter+1;
+                }
+                else{
+                    imageCounter = 0;
+                }
+                imageSlider.src = imgs[imageCounter];
+            }
+            setInterval(imageSlide,1000);
+        }
+    </script>
 </head>
-
 <body>
-  <h1>Rashid Gundlour Mahamed</h1>
-  <script>
-    document.write("<p>Hi All My name is Rashid. I'm from Andhra Pradesh state of India. I've completed my graduation in Computer Science and Engineering from JNTU-H in the year 2013. I have around 5 years of experince in IT industry as a BMC Remedy/ServiceNow developer. My hobbies are wathcing stand-up comdey and reading about new technologies in the market.</p>");
-  </script>
+    <main>
+        <h1>Slide Show</h1>
+        <div id="slide-show">
+            <img src ="" id="image-slider" height="360" width="360">
+        </div>
+    </main>
 </body>
-
 </html>
