@@ -8,11 +8,17 @@
 			box-shadow: 5px 10px 5px #F39C12 ;
 			margin-left: 400px;
 			margin-right: 400px;
-			margin-top:  200px;
-			margin-bottom: 150px;
+			margin-top:  80px;
+			margin-bottom: 70px;
 			background-color: #B3B6B7;			
 			font-weight: bold;			
 		}
+        #img{
+            margin-left: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 4px dashed #34495E;            
+        }
 		.headercontent{
 			color: #154360;
 			font-size: 50px;
@@ -35,12 +41,35 @@
 	</style>
 </head>
 <body>
-	<main>
+    <script> 
+        var x;
+        function swapping()
+            {
+                document.getElementById("img").src=images[x];
+                
+                 if(x < images.length - 1)
+                    x++;
+                 else
+                   x = 0;
+            }
+            var images = new Array()
+                images[0] = "ShivangiPrajapati_ImagesFiles/image1.jpg";
+                images[1] = "ShivangiPrajapati_ImagesFiles/image2.jpg";
+                images[2] = "ShivangiPrajapati_ImagesFiles/image3.jpg";
+                images[3] = "ShivangiPrajapati_ImagesFiles/image4.jpg";
+                images[4] = "ShivangiPrajapati_ImagesFiles/image5.jpg";
+            
+        window.onload = function()
+        {
+            setInterval("swapping()", 1000);               
+        }            
+    </script>
+	<main name="main">
 		<div id="wholecontent">
 			<div class="headercontent">
 				Shivangi Prajapati
 			</div>
-		<div class="maincontent">
+		    <div class="maincontent">
 		<p>Hi,<br>
 			<span>I am from Gujarat, India.</span>
 			I completed my Bachelors in Computer Science Engineering
@@ -51,7 +80,10 @@
 			I used to play both indoor and outdoor games
 			like:-carrom, skatting and bedminton.
 		</p>
-		</div>
+		  </div>
+            <div id="imgcontent">
+                 <img id="img" height="350px" width="655px"/>
+            </div>
 	   </div>
 	</main>
 </body>
