@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Khyati_Shah JavaScript Homework</title>
+    <style>
+        body {
+            font-family: Apple Chancery, cursive, sans-serif;
+            color: #610101;
+            font-size: 20px;
+            font-weight: 600;
+            background-size: 100%;
+
+        }
+
+        #wrapper {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #F5F5F5;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration-line: none;
+        }
+
+        strong {
+            text-decoration-line: none;
+        }
+
+        #images_slider {
+            margin-left: 20px;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Khyati Shah</h1>
+        </header>
+        <nav></nav>
+        <main>
+            <script>
+                document.write("<strong>Hometown</strong> : Gujrat,India.<br>");
+                document.write("<strong>Education</strong> : Information Technology<br>");
+                document.write("<strong>Experience</strong> : I have completed my bachelor's in 2016 and I have 3 years of experience in the same field.<br>");
+                document.writeln("<strong>Hobbies</strong> : In my free time I love to experiment on new dishes and love to meet new peoples. <br><br>");
+                var imageNo = 0;
+                var images = ['bird.jpeg', 'cat.jpeg','catshadow.jpeg', 'girl.jpeg','nature.jpeg'];
+                function slideShow() {
+                    document.slideimg.src = images[imageNo];
+                    if (imageNo < images.length - 1) {
+                        imageNo++;
+                    }
+                    else {
+                        imageNo = 0;
+                    }
+
+                    setTimeout("slideShow()", 1000);
+                }
+
+
+
+
+                window.onload = slideShow;
+
+            </script>
+
+
+            <div id=images_slider>
+
+                <img name="slideimg" height="350px" width="350px">
+
+            </div>
+
+        </main>
+        <footer></footer>
+    </div>
+</body>
+
+</html>
