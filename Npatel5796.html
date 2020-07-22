@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nishi Patel</title>
+    <style>
+    #wrapper {
+           color: aliceblue;
+           background-color: #a51e01;
+           border: solid 0.5em black;
+           width: 40%;
+           padding: 2em;
+           margin: 1em auto;
+            }
+        h1{
+            text-align: center;
+          }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Nishi Patel</h1>
+        <script>
+            document.write("I am Nishi Patel from Valsad(Gujarat), India. I have done my Bachelors in engineering in  Information Technology. I love to play badminton and listen to music. I want to be a professional web designer in near future and to be a part of reputed IT Company.");
+            var i = 0;
+                var images = [];
+                var time= 1000;
+                images[0] = 'Npatel5796/1.jpg';
+                images[1] = 'Npatel5796/2.jpg';
+                images[2] = 'Npatel5796/3.jpg';
+                images[3] = 'Npatel5796/4.jpg';
+                images[4] = 'Npatel5796/5.jpg';
+                function changeImg(){
+                    document.dog.src= images[i];
+                    if (i<images.length - 1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                    }
+                    setTimeout(changeImg, time);
+                }
+                window.onload = changeImg;
+        </script>
+         <img name="dog" width="550" height="250">
+      </div> 
+  </body>
+</html>
