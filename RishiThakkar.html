@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Java Script Homework</title>
+        <meta charset="utf-8">
+
+        <style>
+        h1 {
+            text-align: center;
+        }
+
+        #wrapper {
+            border: solid 0.5em #212121;
+            width: 70%;
+            color: black;
+            font-weight: 100%;
+            padding: 2em;
+            margin: 1em auto;
+        }
+
+
+
+        img {
+        	margin: auto;
+        	margin-top: 5%;
+            
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="wrapper">
+        <h1>Rishikumar Manishkumar Thakkar</h1>
+        <div id="content">
+            <script>
+                document.write("My name is Rishi Thakkar. I'm from Vadodara city which is in Gujarat state of India. I've completed my graduation in Computer Engineering from Government Engineering college, Dahod. I like to watch movies and TV series. I love to travel and Explore things that are unique in every perspective.");
+
+                var i = 0;
+                var img = [];
+                var time = 1000;
+                for (var i = 0; i < 5; i++) {
+                    img[i] = "Rishikumar_imgs/img" + (i + 1) + ".jpg";
+                }
+
+                function slideshow() {
+                    document.image.src = img[i];
+
+                    if (i < img.length - 1) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+
+                    setTimeout("slideshow()", time);
+                }
+                window.onload = slideshow;
+            </script>
+        </div>
+        <img name="image" width="900" height="600">
+    </div> 
+    
+   </body>
+</html>

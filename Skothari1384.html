@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Shivangi Kothari</title>
+        <style>
+            
+            body{
+                font-family: "verdana", sans-serif;
+                background-color: #e4f5ff;
+                border: solid 0.5em #094f6e;
+                width: 80%;
+                padding: 2em;
+                margin: 1em auto;
+                box-shadow: 2px 2px 2px #2d7a9c;
+            }
+            h1{
+                text-align: center;
+            }
+
+            img {
+
+                max-width: 70%;
+                max-height: 30%;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+            <h1>Shivangi Kothari</h1>
+        <div>
+            <img class="slides" src="Shivangi_images/drawing.jpg" alt="drawing">
+            <img class="slides" src="Shivangi_images/sketching.jpg" alt="sketching">
+            <img class="slides"  src="Shivangi_images/painting.jpg" alt="painting">
+            <img class="slides" src="Shivangi_images/netflix%20&%20chill.jpg" alt="Netflix And Chill">
+            <img class="slides" src="Shivangi_images/cooking.webp" alt="food">
+        </div>
+        <script>
+                document.write("<p> Hello, My Name is Shivangi Kothari.<br> I am from Mumbai, India.<br> I have completed my bachelors in computer in the year 2018 and about my work experience I've been working as a Web Solution Specialist at Endurance International Group.<br> My hobbies are drawing, sketching. I like to watch webseries and cook as well in my free time. </p>")
+
+                var myIndex = 0;
+                var slideshow = function() {
+                var s = document.getElementsByClassName("slides");
+                for(var i = 0; i < s.length; i++) {
+                    s[i].style.display = "none";
+                }
+                myIndex++;
+                if(myIndex > s.length){
+                    myIndex = 1;
+                }
+                s[myIndex-1].style.display = "block";
+                setTimeout(slideshow, 1000);
+            }
+            slideshow();
+        </script>
+    </body>
+</html>
+

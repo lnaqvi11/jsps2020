@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mahek Pankil Patel</title>
+    <style>
+      #wrapper {
+        border: solid 0.5em purple;
+        width: 80%;
+        padding: 2em;
+        margin: 1em auto;
+        background-color: plum;
+        font-family: monospace;
+        color: purple;
+      }
+        h1{
+            text-align: center;
+            color: purple;
+        }
+        
+        img{
+            width: 600px; 
+            height: 400px;
+        }
+    </style>
+    
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Mahek Patel</h1>
+        <script>
+            document.write('Hello,My name is Mahek Patel.I am from Ahmedabad,Gujarat,India. I have done B.Sc in Computer Science from Gujarat University. Travelling,Watching movie and going on long drives are my hobbies.Also I like to learn more in this field so that I can have good knowledge.')
+        </script>     
+        
+        <br><br><br>
+        
+        <div class="slideshow-container">
+
+        <div class="mySlides">
+            <img src="https://cdn.pixabay.com/photo/2013/02/21/19/06/beach-84533_1280.jpg">
+        </div>
+
+        <div class="mySlides">
+            <img src="https://cdn.pixabay.com/photo/2017/03/05/00/34/panorama-2117310_1280.jpg">
+        </div>
+
+        <div class="mySlides">
+            <img src="https://cdn.pixabay.com/photo/2016/10/10/14/44/train-1728537_1280.jpg">
+        </div>
+        
+        <div class="mySlides">
+            <img src="https://cdn.pixabay.com/photo/2016/01/19/17/57/car-1149997_1280.jpg">
+        </div>
+        
+        <div class="mySlides">
+            <img src="https://cdn.pixabay.com/photo/2018/03/06/03/56/cyclist-3202481_1280.jpg">     
+        </div>
+    </div>
+      <br>
+
+      <div>
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
+    </div>
+    
+
+      
+    <script>
+         var slideIndex = 0;
+         showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 1000);
+        }
+
+      </script>
+      
+      
+  </body>
+</html>
