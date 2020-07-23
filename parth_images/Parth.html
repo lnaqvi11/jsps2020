@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parth Patel</title>
+      
+      
+    <style>
+        h1{
+		color:black;
+    text-align: center;
+		}
+     #wrapper {
+         background-color: lightskyblue;
+        border: solid greenyellow;
+		color:darkblue;
+        
+     font-size:1em;
+        padding: 2em;
+        margin: 1em auto;
+         width: 50%;
+		
+      }
+    </style>
+       <script>
+	var i = 0; 
+	var images = [];
+	var time = 1000;
+
+	
+	images[0] = 'a.jpg';
+	images[1] = 'b.jpg';
+	images[2] = 'c.jpg';
+	images[3] = 'd.jpg';
+    images[4] = 'e.jpg';
+
+	
+	function changeImg(){
+		document.slide.src = images[i];
+
+		if(i < images.length - 1){
+			i++;
+		} else {
+			i = 0;
+		}
+
+		setTimeout("changeImg()", time);
+	}
+
+	window.onload = changeImg;
+
+</script>
+
+<img name="slide" width="400" height="200">
+
+  </head>
+  <body>
+      
+   <div id="wrapper">
+    <h1>Parth Patel</h1>
+     
+       
+       <script>
+          document.write("Hello, My name is Parth Patel. I reside in Patan, Gujarat in India. I have persue a Bachelor Degree in information scienece and technology in 2018 from  Bangalore, India.I have also worked as an associate softwear engineer for Hewlett Packard Enterprise for more than a year.Talking about my hobbies, I am a huge football fan, so whenever I have a free time I play football. My other hobbies are playing cricket,cooking and horse riding.");
+       </script>
+    
+      
+      </div>
+  </body>
+</html>
