@@ -6,7 +6,6 @@
         <title>Aditya Venkatesh Prasad</title>
         <style>
             body, html {
-                height: 100%;
                 margin: 0;
             }
             body {
@@ -20,12 +19,25 @@
             }
             div {
                 width: 50%;
+                font-family: sans-serif;
+                line-height: 160%;
                 text-align: justify;
             }
+            img {
+                width: 100%;
+                margin: 20px 0;
+            }
+            #message {
+                font-size: 0.9em;
+                margin: 0;
+            }
         </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     </head>
     <body>
         <h1>Aditya Venkatesh Prasad</h1>
+        <p id="message">Keep your mouse on the image to pause the image slider</p>
+        <div id="image-slider"></div>
         <script>
             document.write("<div>");
             document.write("<p>Hey everyone Aditya here, I'm from Bengaluru (Bangalore), Karnataka in India. I'm a self declared Minimalist!</p>");
@@ -33,6 +45,32 @@
             document.write("<p>While I was doing my Masters I had an opportunity to intern in a startup company, I was working as a frontend developer there and mainly used ReactJS v13 and sometimes v15. I didn't put a lot of effort to learn JavaScript, I seriously find JavaScript a weird programing language to master. I have set a short term goal to master this language and hopefully get familiar with many useful and upcoming UI libraries/frameworks.</p>");
             document.write("<p>Given any opportunity I love to take my bike on long rides, I have travelled a lot in India and would like to explore Canada as well. I love to help my Mom when she is cooking. I love to meditate and I also like solitude (when I get to spend time with my thoughts!).</p>");
             document.write("</div>");
+            
+            var imageNumber = 1;
+            var intervalTimer;
+            
+            function changeImageNumber() {
+                imageNumber >= 5 ? imageNumber = 1 : imageNumber += 1;
+            }
+            
+            function showImage() {
+                $("#image-slider").html("<img src='avenkateshprasa4363-images/image_" + imageNumber + ".jpg' alt='My trip image " + imageNumber + "'>");
+                changeImageNumber();
+            }
+            
+            function pauseInterval() {
+                clearInterval(intervalTimer);
+            }
+            
+            function startInterval() {
+                intervalTimer = setInterval(showImage, 1000);
+            }
+            
+            $(document).ready(function() {
+                showImage();
+                startInterval();
+                $("#image-slider").mouseenter(pauseInterval).mouseleave(startInterval);
+            });
         </script>
     </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>Alwin Jose Kurian</title>
+    	<style>
+			body{ background-color: grey;}
+      		#wrapper {
+        		border: solid 0.5em yellow;
+        		width: 80%;
+          		color: white;
+          		font-weight: 75%;
+				font-size: 1.5em;
+        		padding: 2em;
+        		margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 1em;
+      		}
+	
+      		h1{
+				text-align: center;
+				color: yellowgreen;
+			}
+			
+			img{ width: 650px; height: 350px; margin-left: auto; margin-right: auto; display: block;}
+
+    	</style>
+  	</head>
+  	<body>
+		<div id="wrapper">
+			<h1>Alwin Jose Kurian</h1>
+			<p>Hi Everyone, My name is Alwin Jose Kurian. I am from Kerala, India. I did my bachelors in Computer Application and I have one year of experience in IT support. My hobbies are playing football, listening music and I like to watch lot of movies and web series.</p>
+		</div>
+		<div id="img-slides">
+		</div>
+		<script>
+			window.onload = function(){
+				var img = [];
+				var count = 0;
+				for(var i=0; i < 5; i++)
+					img[i] = "akurian-img/img-"+(i+1)+".jpg";
+				
+				function setSlide(){
+					document.getElementById("img-slides").innerHTML = "";
+					var imgElement = document.createElement("img");
+					document.getElementById("img-slides").appendChild(imgElement);
+					imgElement.src = img[count];
+					if(count == 4)
+						count = 0;
+					else
+						count++;
+				}
+				setInterval(setSlide, 1000);
+			};	
+		</script>
+  </body>
+</html>

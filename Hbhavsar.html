@@ -8,17 +8,51 @@
 		}
      #wrapper {
         border: solid 0.3em darkblue;
-		color:darkblue;
         width: 80%;
         padding: 2em;
         margin: 1em auto;
 		font-size:1.5em;
       }
     </style>
+	
+	<script>
+    "use strict";
+    var $ = function(id)
+	{
+        return document.getElementById(id);
+    };
+
+    window.onload = function()
+	{
+        var sldimg = $("img_slider");
+
+         var images = [];
+            for (var i = 0; i < 5; i++) {
+                images[i] = "Hbhavsar_images/" + (i+1) + ".jpg";
+            }
+            var sldshw = 0;
+			var time=1000;
+            function slideshow()
+			{
+                if (sldshw < images.length - 1)
+				{
+                    sldshw = sldshw+1;
+                } 
+				else{
+                    sldshw = 0;
+                }
+                   sldimg.src = images[sldshw];
+            }
+             setInterval(slideshow, time);
+    };
+
+	</script>
+	
   </head>
   <body>
    <div id="wrapper">
     <h1>Harsh Bhavsar</h1>
+	<img id="img_slider" width="600" height="350"><br><br>
       <script>
           document.write("Hello, I am Harsh Bhavsar from Anand,Gujarat, India. I have completed my Bachelor of Computer Applications from SEMCOM college just last year(2019). I like to travel a lot, explore new places and make new friends. My hobbies are to play volleyball and football.");
         </script>

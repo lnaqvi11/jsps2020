@@ -2,11 +2,25 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABT0lEQVQ4jaWTsUtCQRzHD5+c7w+wSUISaRHahAaRWh1saHLQkBdcDj0brMFACHEKcu1vcHJoaxIHp3hik1i8QY2EJ+9eLYngtyXP99JQc/gs9/3eh7vfccQ0UeAcI86BNRlZFgrkn5uFhChKBlMYU1Eu36PbtUTJMMawd6ZkMhcole5ACCH4jc+3jWbzFZwDg8HXXO5AlmXIsgy32+0I4vHj1QTTo/b7nwgGd0Xg9W4tFCSTCtrtN9RqT4hEDmaCXu8DgUBQFP3+nYUCxs7FfDTtBYRSDyj1QJIkRzGfv1kqMM3J/BAppVDVSwyH49UEudw1QqE9m8CDVksXpaVX4ByoVh8dpUTi5E9BKnWKTucd9bqGaPRwNsRweF+UXC4Jjcbzes9YqTw4gljsaD2BaU6QzV4hnWY/nEHXhzCMsW1tBmMqisVbbP6ZLGuz7/wNwJaVZgY92f0AAAAASUVORK5CYII="/>
     <title>Rafael Duarte</title>
     <style>
-        body * {
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-attachment: fixed;
+            background-image: linear-gradient(to bottom, #f0f0ff, #c8c8ff);
+            background-repeat: no-repeat;
             box-sizing: border-box;
             font-family: Verdana, Arial, sans-serif;
+            height: 100%;
+            margin: 0;
         }
 
         #wrapper {
@@ -21,30 +35,107 @@
         }
 
         #description {
+            border-bottom: 1px solid grey;
             border-top: 1px solid grey;
             padding-top: 1em;
+            padding-bottom: 1em;
         }
+
+        #slider {
+            display: block;
+            padding-top: 2em;
+        }
+
+        ul {
+            display: none;
+        }
+
+        img {
+            border-radius: 6px;
+            box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.55);
+            height: 360px;
+            object-fit: cover;
+            width: 564px;
+        }
+
     </style>
+    <script>
+        "use strict";
+
+        var $ = function(id) {
+            return document.getElementById(id);
+        };
+
+        window.onload = function() {
+            var imageList = $("image_list");
+            var imageNode = $("image");
+
+            var imageLinks = document.getElementsByTagName("a");
+
+            var i, linkNode, image;
+            var imageCache = [];
+
+            for (var i = 0; i < imageLinks.length; i++) {
+                linkNode = imageLinks[i];
+
+                // Preloading images and storing image alternate description
+                image = new Image();
+                image.src = linkNode.getAttribute("href");
+                image.alt = linkNode.getAttribute("title");
+                imageCache[imageCache.length] = image;
+            }
+
+            var imageIndex = 0;
+            var slideShow = function() {
+                imageIndex = (imageIndex + 1) % imageCache.length;
+                image = imageCache[imageIndex];
+                imageNode.src = image.src;
+                imageNode.alt = image.alt;
+            }
+
+            var timer = setInterval(slideShow, 1000);
+        };
+
+    </script>
 </head>
 
 <body>
     <div id="wrapper">
 
-        <h1>Rafael Duarte</h1>
+        <header>
+            <h1>Rafael Duarte</h1>
+        </header>
 
-        <div id="description">
-            <script>
-                document.write("<p>");
-                document.write("I am from Brasilia, capital of Brazil.")
-                document.write("</p>");
-                document.write("<p>");
-                document.write("I graduated in Computer Science in 2007, and I have worked as a mainframe developer for 12 years in the banking industry.")
-                document.write("</p>");
-                document.write("<p>");
-                document.write("In my free time, I like to spend it with my family and playing some console videogames. I also love cooking, and I enjoy good music as well.");
-                document.write("</p>");
-            </script>
-        </div>
+        <main>
+            <div id="description">
+                <script>
+                    document.write("<p>");
+                    document.write("I am from Brasilia, capital of Brazil.")
+                    document.write("</p>");
+                    document.write("<p>");
+                    document.write("I graduated in Computer Science in 2007, and I have worked as a mainframe developer for 12 years in the banking industry.")
+                    document.write("</p>");
+                    document.write("<p>");
+                    document.write("In my free time, I like to spend it with my family and playing some console videogames. I also love cooking, and I enjoy good music as well.");
+                    document.write("</p>");
+
+                </script>
+            </div>
+
+            <div id="slider">
+                <ul id="image_list">
+                    <li><a href="rsantosduarte5970_images/family.jpg" title="Family watching the sunset"></a></li>
+                    <li><a href="rsantosduarte5970_images/videogaming.jpg" title="Playing an XBox console videogame"></a></li>
+                    <li><a href="rsantosduarte5970_images/cooking.jpg" title="Cooking a dish with shrimp and vegetables"></a></li>
+                    <li><a href="rsantosduarte5970_images/rockconcert.jpg" title="Rock concert from the audience point of view"></a></li>
+                    <li><a href="rsantosduarte5970_images/symphonyorchestra.jpg" title="String family in a symphonic orchestra"></a></li>
+                </ul>
+                <p>
+                    <img id="image" src="rsantosduarte5970_images/family.jpg" alt="Family watching the sunset">
+                </p>
+            </div>
+        </main>
+
     </div>
 </body>
 

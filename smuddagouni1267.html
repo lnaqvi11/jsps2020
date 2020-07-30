@@ -1,27 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>JavaScript Homework</title>
         <style>
             body{
-                font-family:monospace;
+                font-family:"Times New Roman", Times, serif;;
                 color: #010101;
                 font-size: 20px;
                 font-weight: 300;
                 width: auto;
+				background-color: lightgray
             }
             #wrapper{
-                width: 80%;
+                width: 70%;
                 margin-left: auto;
                 margin-right: auto;
-                background-color: #eee;
-                padding: 50px;
+                background-color: lavenderblush;
+                padding: 5px;
             }
             h1 {
                 text-align: center;
                 text-decoration-line: underline;
             }
+			img {
+				
+                max-width: 65%;
+                height: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+			img.slides {
+				display: block;
+				margin: 0 auto;
+}
        </style>
     </head>
     
@@ -31,9 +42,33 @@
                 <h1>Swetha Muddagouni</h1>
             </header>
             <nav></nav>
+
+            <img class="slides" src="Images_smuddagouni1267/image1.jpg" alt="KidAtPark">
+            <img class="slides" src="Images_smuddagouni1267/image2.jpg" alt="KidAtHome">
+            <img class="slides" src="Images_smuddagouni1267/image3.jpg" alt="KidOnSwing">
+            <img class="slides" src="Images_smuddagouni1267/image4.jpg" alt="KidsAtBackyard">
+            <img class="slides" src="Images_smuddagouni1267/image5.jpg" alt="KidsSwimming">
+<br>
+			
             <main>
                 <script>
-                    document.writeln("Hello Professor Lubna, My name is Swetha. I’m  from Hyderabad, India but currently living in Pennsylvania state, USA. I have 2 kids, so I spend most of the time with them.Coming to my job experience, I have good  experience in sql database development. I joined this course to increase my skills in this web design and development.");
+                    document.writeln("Hello  Professor Lubna, My name is Swetha. I’m  from Hyderabad, India but currently living in Pennsylvania state, USA. I have 2 kids, so I spend most of the time with them.Coming to my job experience, I have good  experience in sql database development. I joined this course to increase my skills in this web design and development.");
+					
+				var order = 0;
+            var slide_show = function() {
+                var s = document.getElementsByClassName("slides");
+                for (var i = 0; i < s.length; i++) {
+                    s[i].style.display = "none";  
+                }
+                order++;
+                if (order > s.length) {
+                    order = 1;
+                }    
+                s[order-1].style.display = "block";  
+                setTimeout(slide_show, 1000);
+            }
+            slide_show();	
+					
                 </script>
             </main>
             <footer></footer>
