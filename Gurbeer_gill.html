@@ -24,14 +24,46 @@
                 margin-bottom: 30px;
                 text-align: center;
             }
+            
+            #slideimage{
+                    width: 100%;
+                    height: 500px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin: 0;
+                    padding: 0;
+            }
 
         </style>
     </head>
     <body>
         <h1>Gurbeer Singh Gill</h1>
-       
+        <p>Hello everyone, My name is Gurbeer Singh Gill. I am from Moga ,Punjab(INDIA). I have done my BTech in Information technology from Chandigarh Engineering College, Landran . I have little bit experience in IOS application development as an intern and inside technical sales as well. I love to learn new things and technologies that's why I am into web development and I love designing the most.As a part of hobbies I love to do gym and as I am extrovert person so I like socialising but my passion is ramp modelling and have been winner at state level .My long term goal is to be a politician and helping people to make better community.</p>
+	    <div id="slideshow">
+		    <img id="slideimage" src="ggill5047_images/1.jpg">
+	    </div>
+	    
             <script>
-                document.write("<p>Hello everyone, My name is Gurbeer Singh Gill. I am from Moga ,Punjab(INDIA). I have done my BTech in Information technology from Chandigarh Engineering College, Landran . I have little bit experience in IOS application development as an intern and inside technical sales as well. I love to learn new things and technologies that's why I am into web development and I love designing the most.As a part of hobbies I love to do gym and as I am extrovert person so I like socialising but my passion is ramp modelling and have been winner at state level .My long term goal is to be a politician and helping people to make better community.</p>");
+                var count=1;
+                function slides(){
+                    
+                    
+                    console.log(count)
+                    if (count<=5 && count>0){
+                        console.log("hi")
+                        var image=document.querySelector("#slideimage")
+                        image.src="ggill5047_images/"+count+".jpg"
+                        count++
+                    }else{
+                        count=1;
+                    }
+                }
+		   window.onload=function(){
+               
+                
+		   	setInterval(slides,1000)
+		   
+		   } 
             </script>
         
     </body>
