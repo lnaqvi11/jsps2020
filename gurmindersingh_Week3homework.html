@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dilavar Walia</title>
+        
+        <style>
+            *{
+                margin: auto;
+                padding: auto;
+            }
+
+            body
+            {
+                font-family: montserrat, sans-serif;
+                margin: 60px;
+                font-size: 20px;
+                padding: 30px;
+                border: 2px solid gold;
+            }
+
+            h1{
+                font-size: 48px;
+                margin-bottom: 30px;
+                text-align: center;
+                color: brown;
+            }
+            img
+            {
+                display: block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>GURMINDER SINGH</h1>
+       
+       
+           <script>
+                document.write("Hey everyone, Myself Gurminder Singh and my home country is India. I have persued my bachelor's in Computer Science Engineering. Since, i have done six Months of internship as Java Developer. I love to travel and explore different places and also i   would love to be in Canada and explore out. Apart from this i love listening to music all the time while working. Stay Safe Stay Home. Thank you.<br><br><br>");
+                var i = 0;
+                var images = []; //starting point
+                var time= 1000;
+                
+                //Image List
+                images[0] = 'd1.jpg';
+                images[1] = 'd2.jpg';
+                images[2] = 'd3.jpg';
+                images[3] = 'd4.jpg';
+                images[4] = 'd5.jpg';
+                
+                //change image 
+                function changeImg(){
+                    document.slide.src= images[i];
+                    
+                    if (i<images.length - 1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                    }
+                    
+                    setTimeout("changeImg()", time);
+                }
+                window.onload = changeImg;
+                
+                
+            </script>
+        
+         <img name="slide" width="900" height="600">
+        
+    </body>
+</html>
